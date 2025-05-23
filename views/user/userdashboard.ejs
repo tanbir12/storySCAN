@@ -1,0 +1,118 @@
+<%- include('header', { title: 'Dashboard | User' }) %>
+
+
+
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      <!-- [ breadcrumb ] start -->
+      <div class="page-header">
+        <div class="page-block">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="page-header-title">
+                <h5 class="m-b-10">Home</h5>
+              </div>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ breadcrumb ] end -->
+      <!-- [ Main Content ] start -->
+
+      <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h5>Welcome To storyScan !</h5>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body position-relative">
+                  <div class="text-center">
+                    <div class="chat-avtar d-inline-flex mx-auto">
+                      <img class="rounded-circle img-fluid wid-120" src="/user/photo" alt="Hi">
+                    </div>
+                    <h5 class="mt-3">
+                      <%= user.name %>
+                    </h5>
+                    <p class="text-muted">
+                      <%= user.email %>
+                    </p>
+                    <ul class="list-inline ms-auto mb-0">
+                      <li class="list-inline-item">
+                        <a href="" class="avtar avtar-xs btn-light-facebook">
+                          <i class="ti ti-brand-facebook f-18"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="" class="avtar avtar-xs btn-light-twitter">
+                          <i class="ti ti-brand-twitter f-18"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="" class="avtar avtar-xs btn-light-linkedin">
+                          <i class="ti ti-brand-linkedin f-18"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    
+                  </div>
+                  <br>
+                  <div class="nav flex-column nav-pills list-group list-group-flush user-sett-tabs" id="user-set-tab"
+                    role="tablist" aria-orientation="vertical">
+                    <a class="nav-link list-group-item list-group-item-action active" id="user-tab-1"
+                      data-bs-toggle="pill" href="#user-cont-1" role="tab">
+                      <span class="f-w-500"><i class="ti ti-user m-r-10"></i>Personal Information</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-2" data-bs-toggle="pill"
+                      href="#user-cont-2" role="tab">
+                      <span class="f-w-500"><i class="ti ti-credit-card m-r-10"></i>Scan QR Code</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-3" data-bs-toggle="pill"
+                      href="#user-cont-3" role="tab">
+                      <span class="f-w-500"><i class="ti ti-lock m-r-10"></i>Change Password</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-4" data-bs-toggle="pill"
+                      href="#user-cont-4" role="tab">
+                      <span class="f-w-500"><i class="ti ti-settings m-r-10"></i>Settings</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- [ sample-page ] end -->
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <footer class="pc-footer">
+    <div class="footer-wrapper container-fluid">
+      <div class="row">
+        <div class="col-sm my-1">
+          <p class="m-0"> &#9829; Design & Developed by <a href="https://www.byteknot.in/"
+              target="_blank">Byteknot Technology</a>.</p>
+        </div>
+        <div class="col-auto my-1">
+          <ul class="list-inline footer-link mb-0">
+            <li class="list-inline-item"><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <%- include('footer') %>

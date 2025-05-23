@@ -1,0 +1,166 @@
+
+<%- include('header', { title: 'Dashboard | Admin' }) %>
+
+
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      <!-- [ breadcrumb ] start -->
+      <div class="page-header">
+        <div class="page-block">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="page-header-title">
+                <h5 class="m-b-10">Home</h5>
+              </div>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ breadcrumb ] end -->
+      <!-- [ Main Content ] start -->
+      
+      <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h5>Welcome To storyScan ! Thanks For being our publisher !</h5>
+            </div>
+          </div>
+          
+          <div class="row">
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body position-relative">
+                  <div class="text-center">
+                    <div class="chat-avtar d-inline-flex mx-auto">
+                      <img class="rounded-circle img-fluid wid-120" src="/user/photo"
+                        alt="User image">
+                    </div>
+                    <h5 class="mt-3"><%= user.name %></h5>
+                    <p class="text-muted"><%= user.email %></p>
+                    <ul class="list-inline ms-auto mb-0">
+                      <li class="list-inline-item">
+                        <a href="#" class="avtar avtar-xs btn-light-facebook">
+                          <i class="ti ti-brand-facebook f-18"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="avtar avtar-xs btn-light-twitter">
+                          <i class="ti ti-brand-twitter f-18"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="avtar avtar-xs btn-light-linkedin">
+                          <i class="ti ti-brand-linkedin f-18"></i>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <br>
+                  </div>
+                  <div class="nav flex-column nav-pills list-group list-group-flush user-sett-tabs" id="user-set-tab"
+                    role="tablist" aria-orientation="vertical">
+                    <a class="nav-link list-group-item list-group-item-action active" id="user-tab-1"
+                      data-bs-toggle="pill" href="#user-cont-1" role="tab">
+                      <span class="f-w-500"><i class="ti ti-user m-r-10"></i>Personal Information</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-2" data-bs-toggle="pill"
+                      href="#user-cont-2" role="tab">
+                      <span class="f-w-500"><i class="ti ti-credit-card m-r-10"></i>Scan QR Code</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-3" data-bs-toggle="pill"
+                      href="#user-cont-3" role="tab">
+                      <span class="f-w-500"><i class="ti ti-lock m-r-10"></i>Change Password</span>
+                    </a>
+                    <a class="nav-link list-group-item list-group-item-action" id="user-tab-4" data-bs-toggle="pill"
+                      href="#user-cont-4" role="tab">
+                      <span class="f-w-500"><i class="ti ti-settings m-r-10"></i>Settings</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-8">
+                <h3 style="text-align: center;" > Post New Story </h3>
+                <form action="/spot/create" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" placeholder="Enter Title" required  name="title" >
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="exampleFormControlSelect1">Category</label>
+                    <select class="form-select" id="exampleFormControlSelect1" name="category" >
+                      <option>Zoo Species</option>
+                      <option>Museum Entities</option>
+                      <option>Temples</option>
+                      <option>Spots</option>
+                      <option>Others</option>
+                    </select>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-4 col-form-label text-lg-end">Upload Image :</label>
+                    <div class="col-lg-6">
+                      <input name="imageFile" id="file" type="file" class="form-control" data-bouncer-target="#file-error-msg" required>
+                      <small id="file-error-msg" class="form-text text-danger"></small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="exampleFormControlTextarea1">Add Description</label>
+                    <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Some Details about the Unvoiced....."  required ></textarea>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-4 col-form-label text-lg-end">Upload Vocal :</label>
+                    <div class="col-lg-6">
+                      <input name="voiceFile" id="file" type="file" class="form-control" data-bouncer-target="#file-error-msg" required>
+                      <small id="file-error-msg" class="form-text text-danger"></small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">NFC ID (optional) </label>
+                    <input type="text" class="form-control" placeholder="Enter Unique Code of NFC" name="nfc_id" >
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button type="reset" class="btn btn-light">Reset</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <!-- [ sample-page ] end -->
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <footer class="pc-footer">
+    <div class="footer-wrapper container-fluid">
+      <div class="row">
+        <div class="col-sm my-1">
+          <p class="m-0"> &#9829; Design & Developed by <a href="https://www.byteknot.in/"
+              target="_blank">Byteknot Technology</a>.</p>
+        </div>
+        <div class="col-auto my-1">
+          <ul class="list-inline footer-link mb-0">
+            <li class="list-inline-item"><a href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [Page Specific JS] start -->
+<%- include('footer') %>
